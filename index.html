@@ -1,0 +1,575 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Prem Kumar — Portfolio</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Clash+Display:wght@400;500;600;700&family=Cabinet+Grotesk:wght@300;400;500;700&family=Syne+Mono&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+</head>
+<body>
+ <!-- Custom Cursor -->
+<div class="cursor" id="cursor"></div>
+<div class="cursor-follower" id="cursorFollower"></div>
+<div class="cursor-label" id="cursorLabel"></div>
+
+  <!-- Noise Overlay -->
+  <div class="noise"></div>
+
+  <!-- Navigation -->
+  <nav class="nav" id="nav">
+     <div class="nav-logo">
+    <video autoplay muted loop playsinline class="logo-video">
+      <source src="logos.mp4" type="video/mp4">
+    </video>
+  </div>
+    <ul class="nav-links">
+      <li><a href="#about" class="nav-link">About</a></li>
+      <li><a href="#work" class="nav-link">Work</a></li>
+      <li><a href="#journey" class="nav-link">Journey</a></li>
+      <li><a href="#skills" class="nav-link">Skills</a></li>
+      <li><a href="#contact" class="nav-link">Contact</a></li>
+    </ul>
+    <div class="nav-cta">
+      <a href="#contact" class="btn-hire">Hire Me</a>
+    </div>
+    <button class="hamburger" id="hamburger">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <!-- Mobile Menu -->
+  <div class="mobile-menu" id="mobileMenu">
+    <ul>
+      <li><a href="#about" class="mob-link">About</a></li>
+      <li><a href="#work" class="mob-link">Work</a></li>
+      <li><a href="#journey" class="mob-link">Journey</a></li>
+      <li><a href="#skills" class="mob-link">Skills</a></li>
+      <li><a href="#contact" class="mob-link">Contact</a></li>
+    </ul>
+  </div>
+
+  <!-- Hero Section -->
+
+  <section class="hero" id="hero">
+    <div class="hero-bg">
+      <canvas id="heroCanvas"></canvas>
+    </div>
+    <div class="hero-content">
+      <div class="hero-tag reveal-up">
+        <span class="dot-pulse"></span>
+        Open to Opportunities
+      </div>
+      <h1 class="hero-title">
+        <span class="line reveal-up delay-1">Software</span>
+        <span class="line hero-name reveal-up delay-2">Developer <span class="ampersand"> &amp;</span></span>
+        <span class="line reveal-up delay-3">Engineer</span>
+      </h1>
+      <p class="hero-sub reveal-up delay-4">
+        I build modern applications — combining clean code, logical thinking, and practical problem solving.
+      </p>
+      <div class="hero-actions reveal-up delay-5">
+        <a href="#work" class="btn-primary">View Work <span class="arrow">→</span></a>
+        <a href="#contact" class="btn-secondary">Let's Talk</a>
+      </div>
+    </div>
+    <div class="hero-scroll">
+      <div class="scroll-line"></div>
+      <span>Scroll</span>
+    </div>
+    <div class="hero-stats">
+      <div class="stat reveal-right delay-1">
+        <span class="stat-num" data-count="10">0</span><span>+</span>
+        <p>Projects Done</p>
+      </div>
+      <div class="stat reveal-right delay-3">
+        <span class="stat-num" data-count="2">0</span><span>+</span>
+        <p>Years Exp.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section class="about section" id="about">
+    <div class="container">
+      <div class="about-grid">
+        <div class="about-left">
+          <div class="section-label reveal-up">About Me</div>
+          <h2 class="section-title reveal-up">Turning Ideas Into<br/><em>Digital Reality</em></h2>
+          <p class="about-text reveal-up">
+Hey! I'm Prem, a passionate Software Development Engineer (SDE) based in India. As a Computer Science student with strong foundations in Java, backend development, and full-stack technologies, I focus on building practical, scalable, and user-centric web applications.          </p>
+          <p class="about-text reveal-up">
+I believe great software is built through strong problem-solving skills, clean architecture, and continuous learning. When I'm not coding, you'll find me practicing DSA, improving my system design knowledge, or building real-world projects that challenge me to grow as a developer.          </p>
+          <div class="about-links reveal-up">
+            <a href="https://github.com/PremKumar1801" class="social-link">GitHub</a>
+            <a href="https://www.linkedin.com/in/prem-kumar-7b3343293/" class="social-link">LinkedIn</a>
+            <a href="https://www.instagram.com/prem_kumar_1992s/" class="social-link">Instagram</a>
+          </div>
+        </div>
+        <div class="about-right reveal-right">
+          <div class="about-img-wrap">
+            <div class="about-img-bg"></div>
+            <div class="about-img">
+  <img src="prem123.jpg" alt="Prem Kumar" class="about-photo">
+</div>
+            <div class="about-badge">
+              <span class="badge-icon">✦</span>
+              <span>2+ Years<br/>Experience</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Work Section -->
+  <section class="work section" id="work">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-label reveal-up">Selected Work</div>
+        <h2 class="section-title reveal-up">Featured <em>Projects</em></h2>
+      </div>
+      <div class="projects-grid">
+
+        <div class="project-card reveal-up delay-1" data-index="01">
+          <div class="project-img">
+            <div class="project-img-inner" style="background: linear-gradient(135deg,#0f2027,#203a43,#2c5364)">
+              <div class="project-decoration"></div>
+            </div>
+          </div>
+          <div class="project-info">
+            <span class="project-num">01</span>
+            <div>
+              <h3 class="project-title">E-Commerce Platform</h3>
+              <p class="project-desc">A full-featured online store with real-time inventory, payments, and admin dashboard.</p>
+              <div class="project-tags">
+                <span>React</span><span>Node.js</span><span>MongoDB</span>
+              </div>
+            </div>
+            <a href="#" class="project-link">View Project ↗</a>
+          </div>
+        </div>
+
+        <div class="project-card reveal-up delay-2" data-index="02">
+          <div class="project-img">
+            <div class="project-img-inner" style="background: linear-gradient(135deg,#1a1a2e,#16213e,#0f3460)">
+              <div class="project-decoration"></div>
+            </div>
+          </div>
+          <div class="project-info">
+            <span class="project-num">02</span>
+            <div>
+              <h3 class="project-title">AI Dashboard</h3>
+              <p class="project-desc">Real-time analytics dashboard powered by machine learning insights and data visualization.</p>
+              <div class="project-tags">
+                <span>Vue.js</span><span>Python</span><span>D3.js</span>
+              </div>
+            </div>
+            <a href="#" class="project-link">View Project ↗</a>
+          </div>
+        </div>
+
+        <div class="project-card reveal-up delay-3" data-index="03">
+          <div class="project-img">
+            <div class="project-img-inner" style="background: linear-gradient(135deg,#0d0d0d,#1a0533,#2d0057)">
+              <div class="project-decoration"></div>
+            </div>
+          </div>
+          <div class="project-info">
+            <span class="project-num">03</span>
+            <div>
+              <h3 class="project-title">Social App</h3>
+              <p class="project-desc">Community platform with real-time messaging, media sharing, and content discovery.</p>
+              <div class="project-tags">
+                <span>Next.js</span><span>GraphQL</span><span>PostgreSQL</span>
+              </div>
+            </div>
+            <a href="#" class="project-link">View Project ↗</a>
+          </div>
+        </div>
+
+        <div class="project-card reveal-up delay-4" data-index="04">
+          <div class="project-img">
+            <div class="project-img-inner" style="background: linear-gradient(135deg,#05203c,#0a3d62,#1abc9c33)">
+              <div class="project-decoration"></div>
+            </div>
+          </div>
+          <div class="project-info">
+            <span class="project-num">04</span>
+            <div>
+              <h3 class="project-title">SaaS Product</h3>
+              <p class="project-desc">Subscription-based productivity tool with team collaboration and project management.</p>
+              <div class="project-tags">
+                <span>TypeScript</span><span>AWS</span><span>Redis</span>
+              </div>
+            </div>
+            <a href="#" class="project-link">View Project ↗</a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- journey section -->
+<!-- ============================================================
+     JOURNEY SECTION — Paste this block directly after your Work section
+     ============================================================ -->
+
+<!-- ── HTML ──────────────────────────────────────────────────── -->
+<section class="section journey" id="journey">
+  <div class="container">
+
+    <div class="section-header reveal">
+      <span class="section-label">Growth</span>
+      <h2 class="section-title">The Journey</h2>
+      <p class="section-subtitle">Three years of evolution — from stage to systems.</p>
+    </div>
+
+    <div class="journey-timeline">
+
+      <!-- Vertical spine -->
+      <div class="journey-spine" aria-hidden="true">
+        <div class="journey-spine__line"></div>
+      </div>
+
+      <!-- ── Year 1 ── -->
+      <div class="journey-node reveal" data-year="1">
+        <button
+          class="journey-node__trigger"
+          aria-expanded="false"
+          aria-controls="journey-panel-1"
+          id="journey-btn-1"
+        >
+          <span class="journey-node__dot" aria-hidden="true"></span>
+          <span class="journey-node__label">Year <em>01</em></span>
+          <span class="journey-node__year-tag">2022</span>
+          <span class="journey-node__arrow" aria-hidden="true"></span>
+        </button>
+
+        <div
+          class="journey-panel"
+          id="journey-panel-1"
+          role="region"
+          aria-labelledby="journey-btn-1"
+          hidden
+        >
+          <div class="journey-panel__inner">
+            <ul class="journey-list">
+              <li class="journey-list__item">
+                <span class="journey-list__accent" aria-hidden="true">✦</span>
+                <div>
+                  <strong>Joined BTH — Beat The Heat Dance Club</strong>
+                  <p>Performed on stage, built confidence, and became part of a winning group performance team.</p>
+                </div>
+              </li>
+              <li class="journey-list__item">
+                <span class="journey-list__accent" aria-hidden="true">✦</span>
+                <div>
+                  <strong>DSA Hackathon — Reached Final Round</strong>
+                  <p>Competed in a data structures focused hackathon and reached the last round, gaining early exposure to competitive problem-solving.</p>
+                </div>
+              </li>
+              <li class="journey-list__item">
+                <span class="journey-list__accent" aria-hidden="true">✦</span>
+                <div>
+                  <strong>Coordinated Bihar State Rally Performances</strong>
+                  <p>Took responsibility for managing dance coordination, strengthening leadership and event management skills.</p>
+                </div>
+              </li>
+              <li class="journey-list__item">
+                <span class="journey-list__accent" aria-hidden="true">✦</span>
+                <div>
+                  <strong>Built Foundation in Programming & DSA</strong>
+                  <p>Started taking coding seriously — learning core concepts and preparing for future technical growth.</p>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- ── Year 2 ── -->
+      <div class="journey-node reveal" data-year="2">
+        <button
+          class="journey-node__trigger"
+          aria-expanded="false"
+          aria-controls="journey-panel-2"
+          id="journey-btn-2"
+        >
+          <span class="journey-node__dot" aria-hidden="true"></span>
+          <span class="journey-node__label">Year <em>02</em></span>
+          <span class="journey-node__year-tag">2023</span>
+          <span class="journey-node__arrow" aria-hidden="true"></span>
+        </button>
+
+        <div
+          class="journey-panel"
+          id="journey-panel-2"
+          role="region"
+          aria-labelledby="journey-btn-2"
+          hidden
+        >
+          <div class="journey-panel__inner">
+            <ul class="journey-list">
+              <li class="journey-list__item">
+                <span class="journey-list__accent" aria-hidden="true">✦</span>
+                <div>
+                  <strong>Joined IEI — Technical Team Member</strong>
+                  <p>Actively contributed to the Institution of Engineers India student chapter and earned certification for technical involvement.</p>
+                </div>
+              </li>
+              <li class="journey-list__item">
+                <span class="journey-list__accent" aria-hidden="true">✦</span>
+                <div>
+                  <strong>Promoted to Social media lead — Bihar Association</strong>
+                  <p>Started as Dance Choreographer and got promoted to Social media lead, reflecting leadership growth and responsibility.</p>
+                </div>
+              </li>
+              <li class="journey-list__item">
+                <span class="journey-list__accent" aria-hidden="true">✦</span>
+                <div>
+                  <strong>Hackathons — Top 10 Finish</strong>
+                  <p>Participated in multiple hackathons and secured Top 10 positions, strengthening teamwork and rapid execution skills.</p>
+                </div>
+              </li>
+              <li class="journey-list__item">
+                <span class="journey-list__accent" aria-hidden="true">✦</span>
+                <div>
+                  <strong>Strengthened Core Technical Skills</strong>
+                  <p>Focused deeply on DSA, Java, and web technologies while building consistency in problem-solving.</p>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- ── Year 3 ── -->
+      <div class="journey-node reveal" data-year="3">
+        <button
+          class="journey-node__trigger"
+          aria-expanded="false"
+          aria-controls="journey-panel-3"
+          id="journey-btn-3"
+        >
+          <span class="journey-node__dot" aria-hidden="true"></span>
+          <span class="journey-node__label">Year <em>03</em></span>
+          <span class="journey-node__year-tag">2024</span>
+          <span class="journey-node__arrow" aria-hidden="true"></span>
+        </button>
+
+        <div
+          class="journey-panel"
+          id="journey-panel-3"
+          role="region"
+          aria-labelledby="journey-btn-3"
+          hidden
+        >
+          <div class="journey-panel__inner">
+            <ul class="journey-list">
+              <li class="journey-list__item">
+                <span class="journey-list__accent" aria-hidden="true">✦</span>
+                <div>
+                  <strong>Focused on SDE Career Path</strong>
+                  <p>Shifted from exploration to strategic preparation — targeting Software Development Engineer roles.</p>
+                </div>
+              </li>
+              <li class="journey-list__item">
+                <span class="journey-list__accent" aria-hidden="true">✦</span>
+                <div>
+                  <strong>Built Real-World Projects</strong>
+                  <p>Developed full-stack applications like Smart Trip Planner and AI-based ideas, focusing on practical implementation.</p>
+                </div>
+              </li>
+              <li class="journey-list__item">
+                <span class="journey-list__accent" aria-hidden="true">✦</span>
+                <div>
+                  <strong>Oracle & Technical Certifications</strong>
+                  <p>Completed industry-recognized certifications to strengthen backend and database fundamentals.</p>
+                </div>
+              </li>
+              <li class="journey-list__item">
+                <span class="journey-list__accent" aria-hidden="true">✦</span>
+                <div>
+                  <strong>Continuous Hackathon Participation</strong>
+                  <p>Actively building unique solutions, refining problem-solving ability, and preparing for internships and placements.</p>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+    </div><!-- /.journey-timeline -->
+  </div><!-- /.container -->
+</section>
+<!-- ============================================================
+     END JOURNEY SECTION HTML
+     ============================================================ -->
+
+
+
+  <!-- Skills Section -->
+  <section class="skills section" id="skills">
+    <div class="container">
+      <div class="section-label reveal-up">Expertise</div>
+      <h2 class="section-title reveal-up">Skills &amp; <em>Technologies</em></h2>
+      <div class="skills-layout">
+        <div class="skills-categories">
+          <div class="skill-cat reveal-up delay-1">
+            <div class="cat-icon">⚡</div>
+            <h3>Frontend</h3>
+            <div class="skill-pills">
+              <span>React</span><span>Vue.js</span><span>Next.js</span><span>TypeScript</span><span>GSAP</span><span>Tailwind</span>
+            </div>
+          </div>
+          <div class="skill-cat reveal-up delay-2">
+            <div class="cat-icon">🔧</div>
+            <h3>Backend</h3>
+            <div class="skill-pills">
+              <span>Node.js</span><span>Python</span><span>PostgreSQL</span><span>MongoDB</span><span>Redis</span><span>GraphQL</span>
+            </div>
+          </div>
+          <div class="skill-cat reveal-up delay-3">
+            <div class="cat-icon">☁️</div>
+            <h3>DevOps &amp; Cloud</h3>
+            <div class="skill-pills">
+              <span>AWS</span><span>Docker</span><span>Kubernetes</span><span>CI/CD</span><span>Vercel</span><span>Linux</span>
+            </div>
+          </div>
+          <div class="skill-cat reveal-up delay-4">
+            <div class="cat-icon">🎨</div>
+            <h3>Design</h3>
+            <div class="skill-pills">
+              <span>Figma</span><span>Framer</span><span>UI/UX</span><span>Design Systems</span><span>Motion</span>
+            </div>
+          </div>
+        </div>
+        <div class="skills-bars reveal-right">
+          <div class="bar-item">
+            <div class="bar-label"><span>Frontend Development</span><span>95%</span></div>
+            <div class="bar-track"><div class="bar-fill" data-width="95"></div></div>
+          </div>
+          <div class="bar-item">
+            <div class="bar-label"><span>Backend Development</span><span>88%</span></div>
+            <div class="bar-track"><div class="bar-fill" data-width="88"></div></div>
+          </div>
+          <div class="bar-item">
+            <div class="bar-label"><span>UI/UX Design</span><span>80%</span></div>
+            <div class="bar-track"><div class="bar-fill" data-width="80"></div></div>
+          </div>
+          <div class="bar-item">
+            <div class="bar-label"><span>DevOps / Cloud</span><span>75%</span></div>
+            <div class="bar-track"><div class="bar-fill" data-width="75"></div></div>
+          </div>
+          <div class="bar-item">
+            <div class="bar-label"><span>Mobile Development</span><span>70%</span></div>
+            <div class="bar-track"><div class="bar-fill" data-width="70"></div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Marquee -->
+  <div class="marquee-section">
+    <div class="marquee-track">
+      <div class="marquee-content">
+        <span>React</span><span>✦</span>
+        <span>Node.js</span><span>✦</span>
+        <span>Next.js</span><span>✦</span>
+        <span>TypeScript</span><span>✦</span>
+        <span>Python</span><span>✦</span>
+        <span>PostgreSQL</span><span>✦</span>
+        <span>AWS</span><span>✦</span>
+        <span>Docker</span><span>✦</span>
+        <span>Figma</span><span>✦</span>
+        <span>GraphQL</span><span>✦</span>
+        <span>React</span><span>✦</span>
+        <span>Node.js</span><span>✦</span>
+        <span>Next.js</span><span>✦</span>
+        <span>TypeScript</span><span>✦</span>
+        <span>Python</span><span>✦</span>
+        <span>PostgreSQL</span><span>✦</span>
+        <span>AWS</span><span>✦</span>
+        <span>Docker</span><span>✦</span>
+        <span>Figma</span><span>✦</span>
+        <span>GraphQL</span><span>✦</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Contact Section -->
+  <section class="contact section" id="contact">
+    <div class="container">
+      <div class="contact-grid">
+        <div class="contact-left">
+          <div class="section-label reveal-up">Get In Touch</div>
+          <h2 class="section-title reveal-up">Let's Build<br/><em>Something Great</em></h2>
+          <p class="contact-desc reveal-up">
+            Have a project in mind? I'd love to hear about it. Send me a message and let's create something amazing together.
+          </p>
+          <div class="contact-info reveal-up">
+            <div class="contact-item">
+              <span class="contact-icon">✉</span>
+              <a href="prem857901@gmail.com">prem857901@gmail.com</a>
+            </div>
+            <div class="contact-item">
+              <span class="contact-icon">📍</span>
+              <span>India , AP</span>
+            </div>
+            <div class="contact-item">
+              <span class="contact-icon">🕐</span>
+              <span>Available Mon–Fri, 9am–6pm PST</span>
+            </div>
+          </div>
+        </div>
+        <div class="contact-right reveal-right">
+          <form class="contact-form" id="contactForm">
+            <div class="form-row">
+              <div class="form-group">
+                <label>Name</label>
+                <input type="text" placeholder="Prem....." required />
+              </div>
+              <div class="form-group">
+                <label>Email</label>
+                <input type="email" placeholder="john@example.com" required />
+              </div>
+            </div>
+            <div class="form-group">
+              <label>Subject</label>
+              <input type="text" placeholder="Project Inquiry" />
+            </div>
+            <div class="form-group">
+              <label>Message</label>
+              <textarea rows="5" placeholder="Tell me about your project..." required></textarea>
+            </div>
+            <button type="submit" class="btn-submit">
+              <span>Send Message</span>
+              <span class="arrow">→</span>
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container footer-inner">
+      <div class="footer-logo"><span class="dot">PK.</span></div>
+      <p class="footer-copy">© 2026 Prem Kumar. Crafted with ♥ and lots of consistency.</p>
+      <div class="footer-links">
+        <a href="https://github.com/PremKumar1801">GitHub</a>
+        <a href="https://www.linkedin.com/in/prem-kumar-7b3343293/">LinkedIn</a>
+        <a href="https://www.instagram.com/prem_kumar_1992s/">Instagram</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
