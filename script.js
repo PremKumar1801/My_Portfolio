@@ -447,3 +447,81 @@ window.addEventListener('scroll', () => {
 
   revealEls.forEach(function (el) { observer.observe(el); });
 })();
+
+
+
+ /**
+  WORK SECTION 
+   */
+
+  document.querySelectorAll('.project-img').forEach(imgContainer => {
+    const scroller  = imgContainer.querySelector('.project-img-scroll');
+    const hint      = imgContainer.querySelector('.scroll-hint');
+
+    let inside      = false;
+    let resetTimer  = null;
+    let animFrame   = null;
+
+    // ── Track cursor presence ──────────────────────────
+    imgContainer.addEventListener('mouseenter', () => {
+      inside = true;
+      clearTimeout(resetTimer);
+      if (animFrame) cancelAnimationFrame(animFrame);
+    });
+
+    imgContainer.addEventListener('mouseleave', () => {
+      inside = false;
+      // Smooth reset after a brief pause
+      resetTimer = setTimeout(() => smoothScrollToTop(scroller), 200);
+    });
+
+    // ── Isolate wheel events ───────────────────────────
+    imgContainer.addEventListener('wheel', e => {
+      if (!inside) return;
+
+      const { scrollTop, scrollHeight, clientHeight } = scroller;
+      const atTop    = scrollTop === 0 && e.deltaY < 0;
+      const atBottom = scrollTop + clientHeight >= scrollHeight && e.deltaY > 0;
+
+      // If not at a boundary, consume the event entirely
+      if (!atTop && !atBottom) {
+        e.preventDefault();
+        e.stopPropagation();
+        scroller.scrollBy({ top: e.deltaY, behavior: 'auto' });
+      }
+    }, { passive: false });
+
+    // ── Hint fade on scroll ────────────────────────────
+    scroller.addEventListener('scroll', () => {
+      if (scroller.scrollTop > 24) {
+        hint.classList.add('hidden');
+      } else {
+        hint.classList.remove('hidden');
+      }
+    }, { passive: true });
+
+    // ── Smooth reset util ──────────────────────────────
+    function smoothScrollToTop(el) {
+      const start     = el.scrollTop;
+      const duration  = 420; // ms
+      let   startTime = null;
+
+      function step(now) {
+        if (!startTime) startTime = now;
+        const elapsed  = now - startTime;
+        const progress = Math.min(elapsed / duration, 1);
+        const ease     = 1 - Math.pow(1 - progress, 3); // easeOutCubic
+
+        el.scrollTop = start * (1 - ease);
+
+        if (progress < 1) {
+          animFrame = requestAnimationFrame(step);
+        } else {
+          el.scrollTop = 0;
+          hint.classList.remove('hidden');
+        }
+      }
+
+      animFrame = requestAnimationFrame(step);
+    }
+  });

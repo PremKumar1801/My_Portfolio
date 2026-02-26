@@ -27,7 +27,7 @@
   </div>
     <ul class="nav-links">
       <li><a href="#about" class="nav-link">About</a></li>
-      <li><a href="#work" class="nav-link">Work</a></li>
+      <li><a href="#projects-section" class="nav-link">Work</a></li>
       <li><a href="#journey" class="nav-link">Journey</a></li>
       <li><a href="#skills" class="nav-link">Skills</a></li>
       <li><a href="#contact" class="nav-link">Contact</a></li>
@@ -125,93 +125,509 @@ I believe great software is built through strong problem-solving skills, clean a
   </section>
 
   <!-- Work Section -->
-  <section class="work section" id="work">
-    <div class="container">
-      <div class="section-header">
-        <div class="section-label reveal-up">Selected Work</div>
-        <h2 class="section-title reveal-up">Featured <em>Projects</em></h2>
+  <section class="projects-section" id="projects-section">
+
+  <p class="section-label"> Selected Work</p>
+  <h2 class="section-heading">Things I've <span>shipped.</span></h2>
+
+  <div class="projects-grid">
+
+    <!-- ══════════════════════════════════════════
+         CARD 1 — Smart Trip Planner
+    ══════════════════════════════════════════ -->
+    <div class="project-card card-1">
+
+      <div class="project-img">
+        <!-- Isolated scroll viewport -->
+        <div class="project-img-scroll">
+
+          <!-- Gradient header panel -->
+          <div class="project-img-inner">
+            <span class="project-index">01</span>
+            <div class="project-title-overlay">
+              <span class="project-type-badge">Full Stack</span>
+              <div class="project-name">Smart Trip Planner</div>
+            </div>
+          </div>
+
+          <!-- Detail panels stacked below -->
+          <div class="project-detail-panels">
+
+            <div class="detail-panel">
+              <div class="detail-panel-label">Problem Statement</div>
+              <div class="detail-panel-content">
+                Travelers waste hours stitching together flights, hotels, and activities from multiple platforms. There was no single tool that intelligently builds a day-by-day itinerary factoring in budget, travel time, and preferences.
+              </div>
+            </div>
+
+            <div class="detail-panel">
+              <div class="detail-panel-label">Key Features</div>
+              <div class="detail-panel-content">
+                <ul>
+                  <li>AI-generated personalized itineraries</li>
+                  <li>Real-time flight & hotel cost aggregation</li>
+                  <li>Collaborative trip sharing with live edits</li>
+                  <li>Budget tracker with category breakdown</li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="detail-panel">
+              <div class="detail-panel-label">Architecture Summary</div>
+              <div class="detail-panel-content">
+                <div class="arch-line">
+                  <span class="arch-node">React Client</span>
+                  <span class="arch-arrow">→</span>
+                  <span class="arch-node">Express API</span>
+                  <span class="arch-arrow">→</span>
+                  <span class="arch-node">OpenAI</span>
+                </div>
+                <div class="arch-line" style="margin-top:6px;">
+                  <span class="arch-node">PostgreSQL</span>
+                  <span class="arch-arrow">+</span>
+                  <span class="arch-node">Redis Cache</span>
+                  <span class="arch-arrow">→</span>
+                  <span class="arch-node">Vercel CDN</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="detail-panel">
+              <div class="detail-panel-label">Tech Stack</div>
+              <div class="detail-panel-content">
+                <div class="tech-chips">
+                  <span class="tech-chip">React</span>
+                  <span class="tech-chip">Node.js</span>
+                  <span class="tech-chip">Express</span>
+                  <span class="tech-chip">PostgreSQL</span>
+                  <span class="tech-chip">OpenAI API</span>
+                  <span class="tech-chip">Redis</span>
+                  <span class="tech-chip">Docker</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="detail-panel">
+              <div class="detail-panel-label">Challenges Solved</div>
+              <div class="detail-panel-content">
+                <ul>
+                  <li>Rate-limited external API calls via Redis queue</li>
+                  <li>Conflict-free collaborative editing with optimistic UI</li>
+                  <li>Prompt engineering for structured itinerary JSON output</li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="detail-panel">
+              <div class="detail-panel-label">Impact / Learning</div>
+              <div class="detail-panel-content">
+                <div class="impact-stat">
+                  <div class="impact-item">
+                    <span class="impact-value">~60%</span>
+                    <span class="impact-desc">reduction in planning time for test users</span>
+                  </div>
+                  <div class="impact-item">
+                    <span class="impact-value">REST + WebSocket</span>
+                    <span class="impact-desc">hybrid architecture for real-time sync</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- Scroll indicator -->
+        <div class="scroll-hint">
+          <span class="scroll-hint-text">
+            Scroll
+            <svg width="10" height="10" viewBox="0 0 10 10" fill="none">
+              <path d="M5 1v8M2 6l3 3 3-3" stroke="rgba(255,255,255,0.4)" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </span>
+        </div>
       </div>
-      <div class="projects-grid">
 
-        <div class="project-card reveal-up delay-1" data-index="01">
-          <div class="project-img">
-            <div class="project-img-inner" style="background: linear-gradient(135deg,#0f2027,#203a43,#2c5364)">
-              <div class="project-decoration"></div>
-            </div>
-          </div>
-          <div class="project-info">
-            <span class="project-num">01</span>
-            <div>
-              <h3 class="project-title">E-Commerce Platform</h3>
-              <p class="project-desc">A full-featured online store with real-time inventory, payments, and admin dashboard.</p>
-              <div class="project-tags">
-                <span>React</span><span>Node.js</span><span>MongoDB</span>
-              </div>
-            </div>
-            <a href="#" class="project-link">View Project ↗</a>
-          </div>
+      <div class="project-info">
+        <p class="project-desc">End-to-end trip planner using AI to generate personalized itineraries with real-time pricing data and collaborative editing.</p>
+        <div class="project-tags">
+          <span class="project-tag">Full Stack</span>
+          <span class="project-tag">AI Integration</span>
+          <span class="project-tag">Real-time</span>
         </div>
-
-        <div class="project-card reveal-up delay-2" data-index="02">
-          <div class="project-img">
-            <div class="project-img-inner" style="background: linear-gradient(135deg,#1a1a2e,#16213e,#0f3460)">
-              <div class="project-decoration"></div>
-            </div>
-          </div>
-          <div class="project-info">
-            <span class="project-num">02</span>
-            <div>
-              <h3 class="project-title">AI Dashboard</h3>
-              <p class="project-desc">Real-time analytics dashboard powered by machine learning insights and data visualization.</p>
-              <div class="project-tags">
-                <span>Vue.js</span><span>Python</span><span>D3.js</span>
-              </div>
-            </div>
-            <a href="#" class="project-link">View Project ↗</a>
-          </div>
-        </div>
-
-        <div class="project-card reveal-up delay-3" data-index="03">
-          <div class="project-img">
-            <div class="project-img-inner" style="background: linear-gradient(135deg,#0d0d0d,#1a0533,#2d0057)">
-              <div class="project-decoration"></div>
-            </div>
-          </div>
-          <div class="project-info">
-            <span class="project-num">03</span>
-            <div>
-              <h3 class="project-title">Social App</h3>
-              <p class="project-desc">Community platform with real-time messaging, media sharing, and content discovery.</p>
-              <div class="project-tags">
-                <span>Next.js</span><span>GraphQL</span><span>PostgreSQL</span>
-              </div>
-            </div>
-            <a href="#" class="project-link">View Project ↗</a>
-          </div>
-        </div>
-
-        <div class="project-card reveal-up delay-4" data-index="04">
-          <div class="project-img">
-            <div class="project-img-inner" style="background: linear-gradient(135deg,#05203c,#0a3d62,#1abc9c33)">
-              <div class="project-decoration"></div>
-            </div>
-          </div>
-          <div class="project-info">
-            <span class="project-num">04</span>
-            <div>
-              <h3 class="project-title">SaaS Product</h3>
-              <p class="project-desc">Subscription-based productivity tool with team collaboration and project management.</p>
-              <div class="project-tags">
-                <span>TypeScript</span><span>AWS</span><span>Redis</span>
-              </div>
-            </div>
-            <a href="#" class="project-link">View Project ↗</a>
-          </div>
-        </div>
-
       </div>
+
     </div>
-  </section>
+
+    <!-- ══════════════════════════════════════════
+         CARD 2 — VisionTrack AI
+    ══════════════════════════════════════════ -->
+    <div class="project-card card-2">
+
+      <div class="project-img">
+        <div class="project-img-scroll">
+
+          <div class="project-img-inner">
+            <span class="project-index">02</span>
+            <div class="project-title-overlay">
+              <span class="project-type-badge">AI / Computer Vision</span>
+              <div class="project-name">VisionTrack AI</div>
+            </div>
+          </div>
+
+          <div class="project-detail-panels">
+
+            <div class="detail-panel">
+              <div class="detail-panel-label">Problem Statement</div>
+              <div class="detail-panel-content">
+                Manual review of surveillance footage is expensive and error-prone. Security teams needed automated real-time detection of anomalous behavior and object tracking across multi-camera setups.
+              </div>
+            </div>
+
+            <div class="detail-panel">
+              <div class="detail-panel-label">Key Features</div>
+              <div class="detail-panel-content">
+                <ul>
+                  <li>Multi-object tracking across video frames</li>
+                  <li>Anomaly detection with configurable thresholds</li>
+                  <li>Live dashboard with alert notifications</li>
+                  <li>Exportable incident reports with timestamps</li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="detail-panel">
+              <div class="detail-panel-label">Architecture Summary</div>
+              <div class="detail-panel-content">
+                <div class="arch-line">
+                  <span class="arch-node">Video Stream</span>
+                  <span class="arch-arrow">→</span>
+                  <span class="arch-node">YOLOv8</span>
+                  <span class="arch-arrow">→</span>
+                  <span class="arch-node">DeepSORT</span>
+                </div>
+                <div class="arch-line" style="margin-top:6px;">
+                  <span class="arch-node">FastAPI</span>
+                  <span class="arch-arrow">→</span>
+                  <span class="arch-node">WebSocket</span>
+                  <span class="arch-arrow">→</span>
+                  <span class="arch-node">React UI</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="detail-panel">
+              <div class="detail-panel-label">Tech Stack</div>
+              <div class="detail-panel-content">
+                <div class="tech-chips">
+                  <span class="tech-chip">Python</span>
+                  <span class="tech-chip">YOLOv8</span>
+                  <span class="tech-chip">OpenCV</span>
+                  <span class="tech-chip">FastAPI</span>
+                  <span class="tech-chip">React</span>
+                  <span class="tech-chip">WebSocket</span>
+                  <span class="tech-chip">MongoDB</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="detail-panel">
+              <div class="detail-panel-label">Challenges Solved</div>
+              <div class="detail-panel-content">
+                <ul>
+                  <li>Real-time inference at 30 FPS on CPU with frame batching</li>
+                  <li>ID re-assignment after occlusion using DeepSORT kalman filter</li>
+                  <li>Async pipeline to prevent frame drop under load</li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="detail-panel">
+              <div class="detail-panel-label">Impact / Learning</div>
+              <div class="detail-panel-content">
+                <div class="impact-stat">
+                  <div class="impact-item">
+                    <span class="impact-value">94.2%</span>
+                    <span class="impact-desc">tracking accuracy on test dataset</span>
+                  </div>
+                  <div class="impact-item">
+                    <span class="impact-value">3× faster</span>
+                    <span class="impact-desc">incident detection vs manual review</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <div class="scroll-hint">
+          <span class="scroll-hint-text">
+            Scroll
+            <svg width="10" height="10" viewBox="0 0 10 10" fill="none">
+              <path d="M5 1v8M2 6l3 3 3-3" stroke="rgba(255,255,255,0.4)" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </span>
+        </div>
+      </div>
+
+      <div class="project-info">
+        <p class="project-desc">Real-time video analytics system using YOLOv8 and DeepSORT for multi-object tracking and anomaly detection across camera feeds.</p>
+        <div class="project-tags">
+          <span class="project-tag">Computer Vision</span>
+          <span class="project-tag">Python</span>
+          <span class="project-tag">Real-time ML</span>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- ══════════════════════════════════════════
+         CARD 3 — Retail Sales Analysis
+    ══════════════════════════════════════════ -->
+    <div class="project-card card-3">
+
+      <div class="project-img">
+        <div class="project-img-scroll">
+
+          <div class="project-img-inner">
+            <span class="project-index">03</span>
+            <div class="project-title-overlay">
+              <span class="project-type-badge">Data / SQL</span>
+              <div class="project-name">Retail Sales Analysis</div>
+            </div>
+          </div>
+
+          <div class="project-detail-panels">
+
+            <div class="detail-panel">
+              <div class="detail-panel-label">Problem Statement</div>
+              <div class="detail-panel-content">
+                A retail chain with 5 years of transactional data had no structured way to identify revenue trends, seasonal patterns, or underperforming SKUs. Business decisions were made on gut feel.
+              </div>
+            </div>
+
+            <div class="detail-panel">
+              <div class="detail-panel-label">Key Features</div>
+              <div class="detail-panel-content">
+                <ul>
+                  <li>Cohort analysis for customer retention trends</li>
+                  <li>YoY & MoM revenue comparison with window functions</li>
+                  <li>Product category profitability heatmaps</li>
+                  <li>Automated executive summary generation</li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="detail-panel">
+              <div class="detail-panel-label">Architecture Summary</div>
+              <div class="detail-panel-content">
+                <div class="arch-line">
+                  <span class="arch-node">Raw CSVs</span>
+                  <span class="arch-arrow">→</span>
+                  <span class="arch-node">PostgreSQL</span>
+                  <span class="arch-arrow">→</span>
+                  <span class="arch-node">dbt Models</span>
+                </div>
+                <div class="arch-line" style="margin-top:6px;">
+                  <span class="arch-node">Metabase</span>
+                  <span class="arch-arrow">+</span>
+                  <span class="arch-node">Python Reports</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="detail-panel">
+              <div class="detail-panel-label">Tech Stack</div>
+              <div class="detail-panel-content">
+                <div class="tech-chips">
+                  <span class="tech-chip">PostgreSQL</span>
+                  <span class="tech-chip">dbt</span>
+                  <span class="tech-chip">Python</span>
+                  <span class="tech-chip">Pandas</span>
+                  <span class="tech-chip">Metabase</span>
+                  <span class="tech-chip">Matplotlib</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="detail-panel">
+              <div class="detail-panel-label">Challenges Solved</div>
+              <div class="detail-panel-content">
+                <ul>
+                  <li>Handled 12M+ rows with indexed CTEs for sub-second queries</li>
+                  <li>Normalized inconsistent date formats across 5 source systems</li>
+                  <li>Idempotent dbt transformations with incremental materialization</li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="detail-panel">
+              <div class="detail-panel-label">Impact / Learning</div>
+              <div class="detail-panel-content">
+                <div class="impact-stat">
+                  <div class="impact-item">
+                    <span class="impact-value">12M+</span>
+                    <span class="impact-desc">rows processed, queries under 800ms</span>
+                  </div>
+                  <div class="impact-item">
+                    <span class="impact-value">SQL Window Fns</span>
+                    <span class="impact-desc">deep expertise in analytical SQL patterns</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <div class="scroll-hint">
+          <span class="scroll-hint-text">
+            Scroll
+            <svg width="10" height="10" viewBox="0 0 10 10" fill="none">
+              <path d="M5 1v8M2 6l3 3 3-3" stroke="rgba(255,255,255,0.4)" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </span>
+        </div>
+      </div>
+
+      <div class="project-info">
+        <p class="project-desc">End-to-end SQL analytics pipeline over 12M+ retail transactions, surfacing cohort trends, SKU performance, and executive dashboards via dbt + Metabase.</p>
+        <div class="project-tags">
+          <span class="project-tag">SQL</span>
+          <span class="project-tag">dbt</span>
+          <span class="project-tag">Data Analytics</span>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- ══════════════════════════════════════════
+         CARD 4 — Online Car Rental System
+    ══════════════════════════════════════════ -->
+    <div class="project-card card-4">
+
+      <div class="project-img">
+        <div class="project-img-scroll">
+
+          <div class="project-img-inner">
+            <span class="project-index">04</span>
+            <div class="project-title-overlay">
+              <span class="project-type-badge">Full Stack</span>
+              <div class="project-name">Online Car Rental System</div>
+            </div>
+          </div>
+
+          <div class="project-detail-panels">
+
+            <div class="detail-panel">
+              <div class="detail-panel-label">Problem Statement</div>
+              <div class="detail-panel-content">
+                Local rental agencies operated on paper-based booking systems, leading to double-bookings, lost revenue, and poor customer experience. Needed a fully digital, self-service rental platform.
+              </div>
+            </div>
+
+            <div class="detail-panel">
+              <div class="detail-panel-label">Key Features</div>
+              <div class="detail-panel-content">
+                <ul>
+                  <li>Date-aware availability engine with conflict prevention</li>
+                  <li>Role-based admin panel for fleet management</li>
+                  <li>Integrated payment with invoice generation</li>
+                  <li>Email notifications for booking lifecycle events</li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="detail-panel">
+              <div class="detail-panel-label">Architecture Summary</div>
+              <div class="detail-panel-content">
+                <div class="arch-line">
+                  <span class="arch-node">React SPA</span>
+                  <span class="arch-arrow">→</span>
+                  <span class="arch-node">Django REST</span>
+                  <span class="arch-arrow">→</span>
+                  <span class="arch-node">PostgreSQL</span>
+                </div>
+                <div class="arch-line" style="margin-top:6px;">
+                  <span class="arch-node">Stripe</span>
+                  <span class="arch-arrow">+</span>
+                  <span class="arch-node">Celery / Redis</span>
+                  <span class="arch-arrow">→</span>
+                  <span class="arch-node">AWS S3</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="detail-panel">
+              <div class="detail-panel-label">Tech Stack</div>
+              <div class="detail-panel-content">
+                <div class="tech-chips">
+                  <span class="tech-chip">React</span>
+                  <span class="tech-chip">Django</span>
+                  <span class="tech-chip">PostgreSQL</span>
+                  <span class="tech-chip">Celery</span>
+                  <span class="tech-chip">Redis</span>
+                  <span class="tech-chip">Stripe API</span>
+                  <span class="tech-chip">AWS S3</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="detail-panel">
+              <div class="detail-panel-label">Challenges Solved</div>
+              <div class="detail-panel-content">
+                <ul>
+                  <li>Atomic DB transactions to prevent race-condition double-bookings</li>
+                  <li>Async email queue via Celery so checkout stays fast</li>
+                  <li>Dynamic pricing engine based on season and vehicle class</li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="detail-panel">
+              <div class="detail-panel-label">Impact / Learning</div>
+              <div class="detail-panel-content">
+                <div class="impact-stat">
+                  <div class="impact-item">
+                    <span class="impact-value">Zero</span>
+                    <span class="impact-desc">double-bookings in 6 months of testing</span>
+                  </div>
+                  <div class="impact-item">
+                    <span class="impact-value">Atomic txns</span>
+                    <span class="impact-desc">deep dive into DB concurrency & locking</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <div class="scroll-hint">
+          <span class="scroll-hint-text">
+            Scroll
+            <svg width="10" height="10" viewBox="0 0 10 10" fill="none">
+              <path d="M5 1v8M2 6l3 3 3-3" stroke="rgba(255,255,255,0.4)" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </span>
+        </div>
+      </div>
+
+      <div class="project-info">
+        <p class="project-desc">Full-stack car rental platform with atomic booking logic, Stripe payments, async email notifications, and an admin fleet management panel.</p>
+        <div class="project-tags">
+          <span class="project-tag">Full Stack</span>
+          <span class="project-tag">Django</span>
+          <span class="project-tag">Payments</span>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
 
   <!-- journey section -->
 <!-- ============================================================
@@ -245,7 +661,7 @@ I believe great software is built through strong problem-solving skills, clean a
         >
           <span class="journey-node__dot" aria-hidden="true"></span>
           <span class="journey-node__label">Year <em>01</em></span>
-          <span class="journey-node__year-tag">2022</span>
+          <span class="journey-node__year-tag">2023</span>
           <span class="journey-node__arrow" aria-hidden="true"></span>
         </button>
 
@@ -301,7 +717,7 @@ I believe great software is built through strong problem-solving skills, clean a
         >
           <span class="journey-node__dot" aria-hidden="true"></span>
           <span class="journey-node__label">Year <em>02</em></span>
-          <span class="journey-node__year-tag">2023</span>
+          <span class="journey-node__year-tag">2024</span>
           <span class="journey-node__arrow" aria-hidden="true"></span>
         </button>
 
@@ -357,7 +773,7 @@ I believe great software is built through strong problem-solving skills, clean a
         >
           <span class="journey-node__dot" aria-hidden="true"></span>
           <span class="journey-node__label">Year <em>03</em></span>
-          <span class="journey-node__year-tag">2024</span>
+          <span class="journey-node__year-tag">2025</span>
           <span class="journey-node__arrow" aria-hidden="true"></span>
         </button>
 
@@ -419,57 +835,57 @@ I believe great software is built through strong problem-solving skills, clean a
       <h2 class="section-title reveal-up">Skills &amp; <em>Technologies</em></h2>
       <div class="skills-layout">
         <div class="skills-categories">
-          <div class="skill-cat reveal-up delay-1">
-            <div class="cat-icon">⚡</div>
-            <h3>Frontend</h3>
-            <div class="skill-pills">
-              <span>React</span><span>Vue.js</span><span>Next.js</span><span>TypeScript</span><span>GSAP</span><span>Tailwind</span>
-            </div>
-          </div>
-          <div class="skill-cat reveal-up delay-2">
-            <div class="cat-icon">🔧</div>
-            <h3>Backend</h3>
-            <div class="skill-pills">
-              <span>Node.js</span><span>Python</span><span>PostgreSQL</span><span>MongoDB</span><span>Redis</span><span>GraphQL</span>
-            </div>
-          </div>
-          <div class="skill-cat reveal-up delay-3">
-            <div class="cat-icon">☁️</div>
-            <h3>DevOps &amp; Cloud</h3>
-            <div class="skill-pills">
-              <span>AWS</span><span>Docker</span><span>Kubernetes</span><span>CI/CD</span><span>Vercel</span><span>Linux</span>
-            </div>
-          </div>
-          <div class="skill-cat reveal-up delay-4">
-            <div class="cat-icon">🎨</div>
-            <h3>Design</h3>
-            <div class="skill-pills">
-              <span>Figma</span><span>Framer</span><span>UI/UX</span><span>Design Systems</span><span>Motion</span>
-            </div>
-          </div>
-        </div>
+  <div class="skill-cat reveal-up delay-1">
+    <div class="cat-icon">⚡</div>
+    <h3>Frontend</h3>
+    <div class="skill-pills">
+      <span>HTML</span><span>CSS</span><span>JavaScript</span><span>Responsive Design</span><span>DOM Manipulation</span><span>UI Design</span>
+    </div>
+  </div>
+  <div class="skill-cat reveal-up delay-2">
+    <div class="cat-icon">🔧</div>
+    <h3>Backend</h3>
+    <div class="skill-pills">
+      <span>Java</span><span>Node.js</span><span>Express.js</span><span>REST APIs</span><span>Authentication</span><span>Server-side Logic</span>
+    </div>
+  </div>
+  <div class="skill-cat reveal-up delay-3">
+    <div class="cat-icon">☁️</div>
+    <h3>Database</h3>
+    <div class="skill-pills">
+      <span>SQL</span><span>MySQL</span><span>MongoDB</span><span>Database Design</span><span>Query Optimization</span><span>Data Modeling</span>
+    </div>
+  </div>
+  <div class="skill-cat reveal-up delay-4">
+    <div class="cat-icon">🎯</div>
+    <h3>Core CS & Problem Solving</h3>
+    <div class="skill-pills">
+      <span>Data Structures</span><span>Algorithms</span><span>OOP</span><span>DBMS</span><span>OS</span><span>Computer Networks</span>
+    </div>
+  </div>
+</div>
         <div class="skills-bars reveal-right">
-          <div class="bar-item">
-            <div class="bar-label"><span>Frontend Development</span><span>95%</span></div>
-            <div class="bar-track"><div class="bar-fill" data-width="95"></div></div>
-          </div>
-          <div class="bar-item">
-            <div class="bar-label"><span>Backend Development</span><span>88%</span></div>
-            <div class="bar-track"><div class="bar-fill" data-width="88"></div></div>
-          </div>
-          <div class="bar-item">
-            <div class="bar-label"><span>UI/UX Design</span><span>80%</span></div>
-            <div class="bar-track"><div class="bar-fill" data-width="80"></div></div>
-          </div>
-          <div class="bar-item">
-            <div class="bar-label"><span>DevOps / Cloud</span><span>75%</span></div>
-            <div class="bar-track"><div class="bar-fill" data-width="75"></div></div>
-          </div>
-          <div class="bar-item">
-            <div class="bar-label"><span>Mobile Development</span><span>70%</span></div>
-            <div class="bar-track"><div class="bar-fill" data-width="70"></div></div>
-          </div>
-        </div>
+  <div class="bar-item">
+    <div class="bar-label"><span>Java (DSA & OOP)</span><span>92%</span></div>
+    <div class="bar-track"><div class="bar-fill" data-width="92"></div></div>
+  </div>
+  <div class="bar-item">
+    <div class="bar-label"><span>Backend Development (Node.js / Express)</span><span>70%</span></div>
+    <div class="bar-track"><div class="bar-fill" data-width="70"></div></div>
+  </div>
+  <div class="bar-item">
+    <div class="bar-label"><span>Frontend Development (HTML / CSS / JS)</span><span>88%</span></div>
+    <div class="bar-track"><div class="bar-fill" data-width="88"></div></div>
+  </div>
+  <div class="bar-item">
+    <div class="bar-label"><span>Database Management (SQL / MongoDB)</span><span>83%</span></div>
+    <div class="bar-track"><div class="bar-fill" data-width="83"></div></div>
+  </div>
+  <div class="bar-item">
+    <div class="bar-label"><span>Problem Solving & DSA</span><span>70%</span></div>
+    <div class="bar-track"><div class="bar-fill" data-width="70"></div></div>
+  </div>
+</div>
       </div>
     </div>
   </section>
@@ -478,26 +894,26 @@ I believe great software is built through strong problem-solving skills, clean a
   <div class="marquee-section">
     <div class="marquee-track">
       <div class="marquee-content">
-        <span>React</span><span>✦</span>
-        <span>Node.js</span><span>✦</span>
-        <span>Next.js</span><span>✦</span>
-        <span>TypeScript</span><span>✦</span>
-        <span>Python</span><span>✦</span>
-        <span>PostgreSQL</span><span>✦</span>
-        <span>AWS</span><span>✦</span>
-        <span>Docker</span><span>✦</span>
-        <span>Figma</span><span>✦</span>
-        <span>GraphQL</span><span>✦</span>
-        <span>React</span><span>✦</span>
-        <span>Node.js</span><span>✦</span>
-        <span>Next.js</span><span>✦</span>
-        <span>TypeScript</span><span>✦</span>
-        <span>Python</span><span>✦</span>
-        <span>PostgreSQL</span><span>✦</span>
-        <span>AWS</span><span>✦</span>
-        <span>Docker</span><span>✦</span>
-        <span>Figma</span><span>✦</span>
-        <span>GraphQL</span><span>✦</span>
+       <span>Java</span><span>✦</span>
+<span>Python</span><span>✦</span>
+<span>SQL</span><span>✦</span>
+<span>HTML</span><span>✦</span>
+<span>CSS</span><span>✦</span>
+<span>JavaScript</span><span>✦</span>
+<span>MongoDB</span><span>✦</span>
+<span>Express.js</span><span>✦</span>
+<span>Node.js</span><span>✦</span>
+<span>Git</span><span>✦</span>
+<span>Java</span><span>✦</span>
+<span>Python</span><span>✦</span>
+<span>SQL</span><span>✦</span>
+<span>HTML</span><span>✦</span>
+<span>CSS</span><span>✦</span>
+<span>JavaScript</span><span>✦</span>
+<span>MongoDB</span><span>✦</span>
+<span>Express.js</span><span>✦</span>
+<span>Node.js</span><span>✦</span>
+<span>Git</span><span>✦</span>
       </div>
     </div>
   </div>

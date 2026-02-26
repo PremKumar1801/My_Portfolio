@@ -588,121 +588,379 @@ body {
   
   .badge-icon { font-size: 1.2rem; }
   
-  /* ===========================
-     WORK / PROJECTS
-     =========================== */
-  .section-header {
-    margin-bottom: 4rem;
-  }
-  
-  .projects-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 2rem;
-  }
-  
-  .project-card {
-    background: var(--card-bg);
-    border: 1px solid var(--border);
-    border-radius: var(--radius);
-    overflow: hidden;
-    transition: transform 0.3s ease, border-color 0.3s;
-    display: flex;
-    flex-direction: column;
-  }
-  
-  .project-card:hover {
-    transform: translateY(-6px);
-    border-color: rgba(232,213,183,0.2);
-  }
-  
-  .project-img {
-    height: 220px;
-    overflow: hidden;
-  }
-  
-  .project-img-inner {
-    width: 100%; height: 100%;
-    position: relative;
-    transition: transform 0.5s ease;
-  }
-  
-  .project-card:hover .project-img-inner {
-    transform: scale(1.05);
-  }
-  
-  .project-decoration {
-    position: absolute;
-    inset: 0;
-    background: repeating-linear-gradient(
-      -45deg,
-      transparent,
-      transparent 40px,
-      rgba(255,255,255,0.02) 40px,
-      rgba(255,255,255,0.02) 41px
-    );
-  }
-  
-  .project-info {
-    padding: 1.8rem;
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-    flex: 1;
-  }
-  
-  .project-num {
-    font-family: var(--font-mono);
-    font-size: 0.75rem;
-    color: var(--accent2);
-    letter-spacing: 0.1em;
-  }
-  
-  .project-title {
-    font-family: var(--font-display);
-    font-size: 1.35rem;
-    font-weight: 700;
-    margin-bottom: 0.4rem;
-    letter-spacing: -0.02em;
-  }
-  
-  .project-desc {
-    font-size: 0.9rem;
-    color: var(--text-muted);
-    line-height: 1.6;
-  }
-  
-  .project-tags {
-    display: flex;
-    gap: 0.5rem;
-    flex-wrap: wrap;
-    margin-top: 0.5rem;
-  }
-  
-  .project-tags span {
-    font-size: 0.75rem;
-    padding: 0.3rem 0.8rem;
-    border-radius: 50px;
-    border: 1px solid var(--border);
-    color: var(--text-muted);
-  }
-  
-  .project-link {
-    font-size: 0.88rem;
-    font-weight: 600;
-    color: var(--accent2);
-    display: inline-flex;
-    align-items: center;
-    gap: 0.3rem;
-    margin-top: auto;
-    padding-top: 0.5rem;
-    transition: gap 0.2s, color 0.2s;
-  }
-  
-  .project-link:hover {
-    gap: 0.7rem;
-    color: var(--accent);
-  }
+
+   /* ─────────────────────────────────────────────
+       DESIGN TOKENS
+    ───────────────────────────────────────────── */
+.projects-section {
+  --bg:          #0a0a0f;
+  --surface:     #111118;
+  --surface-2:   #18181f;
+  --border:      rgba(255,255,255,0.07);
+  --border-h:    rgba(255,255,255,0.14);
+  --text-primary:   #f0f0f5;
+  --text-secondary: #8888a0;
+  --text-muted:     #55556a;
+  --accent:      #d6c2a1;
+  --accent-dim:  rgba(214,194,161,0.15);
+  --tag-bg:      rgba(255,255,255,0.05);
+  --tag-border:  rgba(255,255,255,0.09);
+  --radius:      12px;
+  --card-img-h:  320px;
+  --transition:  0.35s cubic-bezier(0.4,0,0.2,1);
+
+  background: var(--bg);
+  color: var(--text-primary);
+}
+    /* ─────────────────────────────────────────────
+       SECTION WRAPPER
+    ───────────────────────────────────────────── */
+    .projects-section {
+      max-width: 1160px;
+      margin: 0 auto;
+      padding: 100px 24px 120px;
+    }
+
+    .section-label {
+      font-family: 'DM Mono', monospace;
+      font-size: 11px;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 18px;
+    }
+
+    .section-heading {
+      font-size: clamp(2rem, 4vw, 3rem);
+      font-weight: 800;
+      letter-spacing: -0.03em;
+      line-height: 1.05;
+      color: var(--text-primary);
+      margin-bottom: 64px;
+    }
+
+    .section-heading span {
+      color: var(--text-muted);
+    }
+
+    /* ─────────────────────────────────────────────
+       GRID
+    ───────────────────────────────────────────── */
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 24px;
+    }
+
+    @media (max-width: 760px) {
+      .projects-grid { grid-template-columns: 1fr; }
+    }
+
+    /* ─────────────────────────────────────────────
+       CARD
+    ───────────────────────────────────────────── */
+    .project-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      overflow: hidden;
+      transition: border-color var(--transition), box-shadow var(--transition);
+      display: flex;
+      flex-direction: column;
+    }
+
+    .project-card:hover {
+      border-color: var(--border-h);
+      box-shadow: 0 0 0 1px var(--border-h), 0 24px 60px rgba(0,0,0,0.5);
+    }
+
+    /* ─────────────────────────────────────────────
+       IMAGE CONTAINER  (the scrollable zone)
+    ───────────────────────────────────────────── */
+    .project-img {
+      position: relative;
+      height: var(--card-img-h);
+      overflow: hidden;          /* clip children */
+      flex-shrink: 0;
+    }
+
+    /* The actual scrolling viewport INSIDE .project-img */
+    .project-img-scroll {
+      position: absolute;
+      inset: 0;
+      overflow-y: scroll;
+      /* Hide the scrollbar visually but keep it functional */
+      scrollbar-width: none;
+    }
+    .project-img-scroll::-webkit-scrollbar { display: none; }
+
+    /* ─────────────────────────────────────────────
+       GRADIENT HEADER PANEL  (always first child)
+    ───────────────────────────────────────────── */
+    .project-img-inner {
+      height: var(--card-img-h);
+      flex-shrink: 0;
+      position: relative;
+      display: flex;
+      align-items: flex-end;
+      padding: 24px;
+      overflow: hidden;
+    }
+
+    .project-img-inner::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      /* gradient overridden per card via inline custom props */
+      background: var(--card-grad);
+      z-index: 0;
+    }
+
+    /* subtle grid texture */
+    .project-img-inner::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image:
+        linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px);
+      background-size: 40px 40px;
+      z-index: 1;
+    }
+
+    .project-index {
+      font-family: 'DM Mono', monospace;
+      font-size: 72px;
+      font-weight: 500;
+      line-height: 1;
+      color: rgba(255,255,255,0.08);
+      position: absolute;
+      top: 16px;
+      right: 20px;
+      z-index: 2;
+      letter-spacing: -0.04em;
+      user-select: none;
+    }
+
+    .project-title-overlay {
+      position: relative;
+      z-index: 3;
+    }
+
+    .project-type-badge {
+      display: inline-block;
+      font-family: 'DM Mono', monospace;
+      font-size: 9px;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.55);
+      border: 1px solid rgba(255,255,255,0.15);
+      border-radius: 4px;
+      padding: 3px 8px;
+      margin-bottom: 8px;
+    }
+
+    .project-name {
+      font-size: 20px;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      color: rgba(255,255,255,0.95);
+      line-height: 1.2;
+    }
+
+    /* ─────────────────────────────────────────────
+       DETAIL PANELS  (stacked below the header)
+    ───────────────────────────────────────────── */
+    .project-detail-panels {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+    }
+
+    .detail-panel {
+      padding: 20px 24px;
+      border-top: 1px solid var(--border);
+      background: var(--surface-2);
+    }
+
+    .detail-panel:first-child { border-top: none; }
+
+    .detail-panel-label {
+      font-family: 'DM Mono', monospace;
+      font-size: 9.5px;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 10px;
+    }
+
+    .detail-panel-content {
+      font-size: 13px;
+      line-height: 1.65;
+      color: var(--text-secondary);
+    }
+
+    .detail-panel-content ul {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+    }
+
+    .detail-panel-content ul li::before {
+      content: '→ ';
+      color: var(--accent);
+      font-family: 'DM Mono', monospace;
+    }
+
+    .detail-panel-content .arch-line {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-family: 'DM Mono', monospace;
+      font-size: 11px;
+      color: var(--text-secondary);
+      flex-wrap: wrap;
+    }
+
+    .arch-arrow {
+      color: var(--text-muted);
+      flex-shrink: 0;
+    }
+
+    .arch-node {
+      background: var(--tag-bg);
+      border: 1px solid var(--tag-border);
+      border-radius: 4px;
+      padding: 2px 8px;
+      white-space: nowrap;
+      font-size: 10px;
+    }
+
+    .tech-chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+    }
+
+    .tech-chip {
+      font-family: 'DM Mono', monospace;
+      font-size: 10px;
+      padding: 3px 9px;
+      background: var(--accent-dim);
+      color: var(--accent);
+      border: 1px solid rgba(110,107,255,0.25);
+      border-radius: 4px;
+      letter-spacing: 0.04em;
+    }
+
+    .impact-stat {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+
+    .impact-item {
+      display: flex;
+      align-items: baseline;
+      gap: 8px;
+    }
+
+    .impact-value {
+      font-family: 'DM Mono', monospace;
+      font-size: 18px;
+      font-weight: 500;
+      color: var(--text-primary);
+    }
+
+    .impact-desc {
+      font-size: 12px;
+      color: var(--text-muted);
+    }
+
+    /* ─────────────────────────────────────────────
+       SCROLL INDICATOR
+    ───────────────────────────────────────────── */
+    .scroll-hint {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      z-index: 10;
+      pointer-events: none;
+      /* Gradient fade so it softly bleeds from the card image area */
+      background: linear-gradient(to bottom, transparent 0%, rgba(10,10,15,0.8) 60%, rgba(10,10,15,0.95) 100%);
+      height: 52px;
+      display: flex;
+      align-items: flex-end;
+      justify-content: center;
+      padding-bottom: 10px;
+      transition: opacity 0.4s ease;
+    }
+
+    .scroll-hint.hidden { opacity: 0; }
+
+    .scroll-hint-text {
+      font-family: 'DM Mono', monospace;
+      font-size: 9px;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.4);
+      display: flex;
+      align-items: center;
+      gap: 5px;
+    }
+
+    .scroll-hint-text svg {
+      animation: bounce-down 1.6s ease-in-out infinite;
+    }
+
+    @keyframes bounce-down {
+      0%, 100% { transform: translateY(0); }
+      50%       { transform: translateY(3px); }
+    }
+
+    /* ─────────────────────────────────────────────
+       PROJECT INFO BELOW
+    ───────────────────────────────────────────── */
+    .project-info {
+      padding: 22px 24px 18px;
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+      flex: 1;
+    }
+
+    .project-desc {
+      font-size: 13.5px;
+      line-height: 1.6;
+      color: var(--text-secondary);
+    }
+
+    .project-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+    }
+
+    .project-tag {
+      font-family: 'DM Mono', monospace;
+      font-size: 10px;
+      padding: 4px 10px;
+      background: var(--tag-bg);
+      border: 1px solid var(--tag-border);
+      border-radius: 4px;
+      color: var(--text-muted);
+      letter-spacing: 0.05em;
+    }
+
+    /* ─────────────────────────────────────────────
+       CARD GRADIENT THEMES
+    ───────────────────────────────────────────── */
+    .card-1 { --card-grad: linear-gradient(135deg, #0f2027 0%, #203a43 45%, #2c5364 100%); }
+    .card-2 { --card-grad: linear-gradient(135deg, #0d0d1a 0%, #1a0533 45%, #2d1b69 100%); }
+    .card-3 { --card-grad: linear-gradient(135deg, #0a1628 0%, #0d2b1e 45%, #0f3d2e 100%); }
+    .card-4 { --card-grad: linear-gradient(135deg, #1a0a00 0%, #2d1500 45%, #3d2000 100%); }
   
 /* ── Journey variables (inherits your existing custom properties) ── */
 :root {
@@ -1400,6 +1658,7 @@ body {
   width: auto;
   object-fit: contain;
   transition: transform 0.3s ease, filter 0.3s ease;
+    
 }
 
 /* Hover effect (premium touch) */
