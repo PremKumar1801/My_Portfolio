@@ -1379,6 +1379,42 @@ body {
   transition: opacity .6s var(--j-ease-out), transform .6s var(--j-ease-out);
 }
 .journey .reveal.visible { opacity: 1; transform: translateY(0); }
+/* ══════════════════════════════════════════════════════════════
+   HINT TEXT
+   ══════════════════════════════════════════════════════════════ */
+.journey-hint {
+  margin-top: .6rem;
+  font-size: .72rem;
+  letter-spacing: .18em;
+  text-transform: uppercase;
+  color: var(--j-gold);
+  opacity: .5;
+  font-weight: 400;
+  font-style: normal;
+}
+
+/* ══════════════════════════════════════════════════════════════
+   SPINE SHIMMER ANIMATION
+   ══════════════════════════════════════════════════════════════ */
+@keyframes journey-spine-shimmer {
+  0%   { opacity: .4; }
+  50%  { opacity: .75; }
+  100% { opacity: .4; }
+}
+
+.journey-spine__line {
+  animation: journey-spine-shimmer 7s ease-in-out infinite;
+}
+
+/* ══════════════════════════════════════════════════════════════
+   SCROLL REVEAL
+   ══════════════════════════════════════════════════════════════ */
+.journey .reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity .6s var(--j-ease-out), transform .6s var(--j-ease-out);
+}
+.journey .reveal.visible { opacity: 1; transform: translateY(0); }
 .journey .reveal:nth-child(2) { transition-delay: .1s; }
 .journey .reveal:nth-child(3) { transition-delay: .2s; }
 .journey .reveal:nth-child(4) { transition-delay: .3s; }

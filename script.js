@@ -446,8 +446,14 @@ window.addEventListener('scroll', () => {
   );
 
   revealEls.forEach(function (el) { observer.observe(el); });
-})();
 
+  /* ── Open Year 1 on load ── */
+  var defaultNode = document.querySelector('.journey-node[data-year="1"]');
+  if (defaultNode) {
+    var defaultPanel = defaultNode.querySelector('.journey-panel');
+    if (defaultPanel) defaultPanel.removeAttribute('hidden');
+  }
+})();
 
 
  /**
